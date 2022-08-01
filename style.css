@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  width: 90rem;
+  height: 80rem;
+  background: url(images/street.jpg) center no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.tree {
+  width: 40rem;
+  height: 70rem;
+  position: relative;
+  transform-origin: bottom center;
+  animation: treeAnim 5s infinite;
+}
+
+@keyframes treeAnim {
+  0% {
+    transform: skew(0);
+  }
+  10% {
+    transform: skew(4deg);
+  }
+  20% {
+    transform: skew(6deg);
+  }
+  50% {
+    transform: skew(8deg);
+  }
+  70% {
+    transform: skew(10deg);
+  }
+  100% {
+    transform: skew(0);
+  }
+}
+
+.tree div {
+  position: absolute;
+}
+
+.main-branch {
+  width: 1rem;
+  height: 45rem;
+  background-color: brown;
+  bottom: 0;
+  left: 19.5rem;
+}
+
+.branch {
+  width: 10rem;
+  height: 22rem;
+  position: absolute;
+}
+
+.branch-1 {
+  bottom: 15rem;
+  border-right: 1rem solid brown;
+  border-bottom: 1rem solid brown;
+  border-bottom-right-radius: 90%;
+}
+
+.branch-2 {
+  bottom: 20rem;
+  left: -10rem;
+  border-left: 1rem solid brown;
+  border-bottom: 1rem solid brown;
+  border-bottom-left-radius: 90%;
+}
+
+.tree-leaves {
+  width: 16rem;
+  height: 45rem;
+  background-color: green;
+  left: 12rem;
+  top: 10rem;
+  border-radius: 50% 50% 5rem 5rem;
+}
+
+.big-leaves {
+  width: 15rem;
+  height: 25rem;
+  background-color: green;
+  border-radius: 50%;
+}
+
+.big-leaves:nth-child(1) {
+  top: 11rem;
+  left: -4rem;
+}
+
+.big-leaves:nth-child(2) {
+  top: 10rem;
+  left: 5rem;
+}
+
+.small-leaves {
+  width: 13rem;
+  height: 13rem;
+  background-color: green;
+  border-radius: 50%;
+}
+
+.small-leaves:nth-child(3) {
+  left: 0;
+  top: 5rem;
+}
+
+.small-leaves:nth-child(4) {
+  left: 5rem;
+  top: 28rem;
+}
+
+.leaves {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  perspective: 100rem;
+}
+
+.leaves div {
+  position: absolute;
+  width: 6rem;
+  height: 10rem;
+  background-color: rgb(22, 179, 16);
+  border-radius: 20rem 0;
+  overflow: hidden;
+}
+
+@keyframes leafAnim {
+  0% {
+    right: -10rem;
+    transform: rotateZ(0) translateZ(0);
+  }
+  100% {
+    right: 200rem;
+    transform: rotateZ(360deg) translateZ(-150rem);
+  }
+}
+
+.leaves div:nth-child(1) {
+  top: 5rem;
+  animation: leafAnim 10s infinite linear;
+}
+
+.leaves div:nth-child(2) {
+  top: 20rem;
+  animation: leafAnim 6s infinite linear;
+}
+
+.leaves div:nth-child(3) {
+  top: 35rem;
+  animation: leafAnim 4s infinite ease-in;
+}
+
+.leaves div:nth-child(4) {
+  top: 50rem;
+  animation: leafAnim 8s infinite linear;
+}
+
+.leaves div:nth-child(5) {
+  top: 65rem;
+  animation: leafAnim 3s infinite linear;
+}
+
+.leaves div:nth-child(6) {
+  top: 57rem;
+  animation: leafAnim 11s infinite linear;
+}
+
+.leaves div:nth-child(7) {
+  top: 57rem;
+  animation: leafAnim 12s infinite ease-in-out;
+}
+
+.leaves div::before {
+  content: "";
+  width: 0.1rem;
+  height: 120%;
+  background-color: rgb(112, 241, 86);
+  position: absolute;
+  bottom: 0;
+  transform: rotateZ(30deg);
+  transform-origin: bottom;
+  box-shadow: 0.1rem 0.1rem 0.5rem green;
+}
